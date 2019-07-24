@@ -43,8 +43,6 @@
 		2CC299CF22E866EF005B4C54 /* TopicDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDao.swift; sourceTree = "<group>"; };
 		2CC299D122E884CA005B4C54 /* TopicFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicFormViewController.swift; sourceTree = "<group>"; };
 		2CC299D422E8933C005B4C54 /* TableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+Extension.swift"; sourceTree = "<group>"; };
-		2CC299DC22E8A239005B4C54 /* SimpleText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleText.swift; sourceTree = "<group>"; };
-		2CC299DE22E8A239005B4C54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CC299E822E8A354005B4C54 /* Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Test.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC299EA22E8A354005B4C54 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		2CC299EC22E8A354005B4C54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,7 +70,6 @@
 			isa = PBXGroup;
 			children = (
 				2CC299B222E86067005B4C54 /* coding-challenge */,
-				2CC299DB22E8A239005B4C54 /* SimpleText */,
 				2CC299E922E8A354005B4C54 /* Test */,
 				2CC299B122E86067005B4C54 /* Products */,
 			);
@@ -127,15 +124,6 @@
 				2CC299D422E8933C005B4C54 /* TableView+Extension.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		2CC299DB22E8A239005B4C54 /* SimpleText */ = {
-			isa = PBXGroup;
-			children = (
-				2CC299DC22E8A239005B4C54 /* SimpleText.swift */,
-				2CC299DE22E8A239005B4C54 /* Info.plist */,
-			);
-			path = SimpleText;
 			sourceTree = "<group>";
 		};
 		2CC299E922E8A354005B4C54 /* Test */ = {
