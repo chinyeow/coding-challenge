@@ -10,11 +10,9 @@ import UIKit
 
 class TableViewCellTopic: UITableViewCell {
     
-    @IBOutlet weak var btnUpvote: UIImageView!
-    @IBOutlet weak var btnDownvote: UIImageView!
-    @IBOutlet weak var lblTopic: UITextView!
-    @IBOutlet weak var voteCount: UILabel!
     private var topicDao:TopicDao!
+    @IBOutlet weak var textTopic: UITextView!
+    @IBOutlet weak var txtVote: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,5 +24,39 @@ class TableViewCellTopic: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    /// This function use to set TopicData object and set the label
+    ///
+    /// - Parameter topicObj: The TopicDao from AppData
+    func setTopicDao(_ topicObj: TopicDao) {
+        topicDao = topicObj
+        textTopic.text = topicDao.getTopic()
+        updateVote()
+    }
+    
+    @IBAction func upvote(_ sender: Any) {
+        topicDao.upvote()
+        updateVote()
+    }
+    
+    @IBAction func downvote(_ sender: Any) {
+        topicDao.downvote()
+        updateVote()
+    }
+    
+    /// This function use to update vote count on TableCell
+    ///
+    /// - Note: The count will become '.' if vote count is less than 1
+    func updateVote() {
+        guard let obj = topicDao else {
+            return
+        }
+        
+        let vote = obj.getVoteCount()
+        if vote <= 0 {
+            txtVote.text = "."
+        } else {
+            txtVote.text = "\(vote)"
+        }
+    }
 }

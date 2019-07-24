@@ -16,6 +16,7 @@ class TopicFormViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         txtTopic.delegate = self
         // Do any additional setup after loading the view.
     }
@@ -28,12 +29,14 @@ class TopicFormViewController: UIViewController, UITextViewDelegate {
         updateTextCount()
     }
     
+    /// Set placeholder for TextView
     func setPlaceHolder() {
         txtTopic.text = "Fill in your topic here"
         txtTopic.textColor = UIColor.lightGray
         txtTopic.selectedTextRange = txtTopic.textRange(from: txtTopic.beginningOfDocument, to: txtTopic.beginningOfDocument)
     }
     
+    /// Update text count
     func updateTextCount() {
         if txtTopic.textColor == UIColor.lightGray {
             txtCount.text = "0/255"

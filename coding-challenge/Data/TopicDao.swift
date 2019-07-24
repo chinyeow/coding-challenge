@@ -19,23 +19,41 @@ class TopicDao {
         downvoteCount = 0
     }
     
+    /// Update upvote count by 1
     func upvote() {
         upvoteCount += 1
     }
     
+    /// Update downvote count by 1
     func downvote() {
         downvoteCount += 1
     }
     
+    /// Get topic
+    ///
+    /// - Returns: topic in String
     func getTopic() -> String {
         return topic
     }
     
+    /// Get upvoteCount
+    ///
+    /// - Returns: upvoteCount in Int
     func getUpvotesCount() -> Int {
         return upvoteCount
     }
     
+    /// Get downvoteCount
+    ///
+    /// - Returns: downvoteCount in Int
     func getDownvotesCount() -> Int {
         return downvoteCount
+    }
+    
+    /// Get vote count by minus downvotecount from upvotecount
+    ///
+    /// - Returns: vote count in Int
+    func getVoteCount() -> Int {
+        return upvoteCount - downvoteCount
     }
 }

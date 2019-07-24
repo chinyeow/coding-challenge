@@ -15,13 +15,14 @@ class TableViewControllerTopic: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationController?
+            .interactivePopGestureRecognizer?
+            .delaysTouchesBegan = false
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        self.tableView.rowHeight = UITableView.automaticDimension;
-        self.tableView.estimatedRowHeight = 80.0;
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,14 +40,30 @@ class TableViewControllerTopic: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if topics.count == 0 {
+            tableView.setEmptyView(title: "No Topic", message: "Click on + button to add new topic")
+        }
+        else {
+            tableView.restore()
+        }
         return topics.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:TableViewCellTopic = tableView.dequeueReusableCell(withIdentifier: "TopicCell", for: indexPath) as! TableViewCellTopic
-        cell.lblTopic.text = topics[indexPath.row].getTopic()
+        print(indexPath.row)
+        print(topics[indexPath.row].getTopic())
+        cell.setTopicDao(topics[indexPath.row])
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
 
     /*
