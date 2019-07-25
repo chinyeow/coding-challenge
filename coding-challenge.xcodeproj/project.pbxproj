@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2CBD336D22E950E900F30F88 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD336B22E950E900F30F88 /* DataModel.xcdatamodeld */; };
 		2CC299B422E86067005B4C54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC299B322E86067005B4C54 /* AppDelegate.swift */; };
 		2CC299B922E86067005B4C54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CC299B722E86067005B4C54 /* Main.storyboard */; };
 		2CC299BB22E86067005B4C54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CC299BA22E86067005B4C54 /* Assets.xcassets */; };
@@ -14,7 +15,6 @@
 		2CC299C922E864BD005B4C54 /* TableViewControllerTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC299C822E864BD005B4C54 /* TableViewControllerTopic.swift */; };
 		2CC299CB22E864D0005B4C54 /* TableViewCellTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC299CA22E864D0005B4C54 /* TableViewCellTopic.swift */; };
 		2CC299CE22E8657B005B4C54 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC299CD22E8657B005B4C54 /* AppData.swift */; };
-		2CC299D022E866EF005B4C54 /* TopicDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC299CF22E866EF005B4C54 /* TopicDao.swift */; };
 		2CC299D222E884CA005B4C54 /* TopicFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC299D122E884CA005B4C54 /* TopicFormViewController.swift */; };
 		2CC299D522E8933C005B4C54 /* TableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC299D422E8933C005B4C54 /* TableView+Extension.swift */; };
 		2CC299EB22E8A354005B4C54 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC299EA22E8A354005B4C54 /* Test.swift */; };
@@ -31,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2CBD336C22E950E900F30F88 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		2CC299B022E86067005B4C54 /* coding-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "coding-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC299B322E86067005B4C54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CC299B822E86067005B4C54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,7 +41,6 @@
 		2CC299C822E864BD005B4C54 /* TableViewControllerTopic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerTopic.swift; sourceTree = "<group>"; };
 		2CC299CA22E864D0005B4C54 /* TableViewCellTopic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellTopic.swift; sourceTree = "<group>"; };
 		2CC299CD22E8657B005B4C54 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
-		2CC299CF22E866EF005B4C54 /* TopicDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicDao.swift; sourceTree = "<group>"; };
 		2CC299D122E884CA005B4C54 /* TopicFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicFormViewController.swift; sourceTree = "<group>"; };
 		2CC299D422E8933C005B4C54 /* TableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+Extension.swift"; sourceTree = "<group>"; };
 		2CC299E822E8A354005B4C54 /* Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Test.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +69,7 @@
 		2CC299A722E86066005B4C54 = {
 			isa = PBXGroup;
 			children = (
+				2CBD336B22E950E900F30F88 /* DataModel.xcdatamodeld */,
 				2CC299B222E86067005B4C54 /* coding-challenge */,
 				2CC299E922E8A354005B4C54 /* Test */,
 				2CC299B122E86067005B4C54 /* Products */,
@@ -113,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				2CC299CD22E8657B005B4C54 /* AppData.swift */,
-				2CC299CF22E866EF005B4C54 /* TopicDao.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -237,7 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CC299B422E86067005B4C54 /* AppDelegate.swift in Sources */,
-				2CC299D022E866EF005B4C54 /* TopicDao.swift in Sources */,
+				2CBD336D22E950E900F30F88 /* DataModel.xcdatamodeld in Sources */,
 				2CC299D222E884CA005B4C54 /* TopicFormViewController.swift in Sources */,
 				2CC299CE22E8657B005B4C54 /* AppData.swift in Sources */,
 				2CC299D522E8933C005B4C54 /* TableView+Extension.swift in Sources */,
@@ -503,6 +503,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2CBD336B22E950E900F30F88 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2CBD336C22E950E900F30F88 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 2CBD336C22E950E900F30F88 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2CC299A822E86066005B4C54 /* Project object */;
 }

@@ -95,7 +95,7 @@ class TopicFormViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func save(_ sender: Any) {
-        AppData.addTopic(topic: TopicDao(txtTopic.text))
+        AppData.createTopic(txtTopic.text)
         self.navigationController?.popViewController(animated: true)
     }
     

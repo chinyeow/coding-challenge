@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class TableViewControllerTopic: UITableViewController {
 
-    var topics:[TopicDao]!
+    var topics:[NSManagedObject]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,7 @@ class TableViewControllerTopic: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        topics = AppData.getAllTopics().sorted(by: { $0.getUpvotesCount() > $1.getUpvotesCount() })
+        topics = AppData.getSortedTopicEntity()
         self.tableView.reloadData()
     }
 
@@ -51,9 +52,7 @@ class TableViewControllerTopic: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:TableViewCellTopic = tableView.dequeueReusableCell(withIdentifier: "TopicCell", for: indexPath) as! TableViewCellTopic
-        print(indexPath.row)
-        print(topics[indexPath.row].getTopic())
-        cell.setTopicDao(topics[indexPath.row])
+        cell.setTopicDao(topics![indexPath.row])
         
         return cell
     }

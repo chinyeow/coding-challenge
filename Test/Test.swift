@@ -9,8 +9,6 @@
 import XCTest
 @testable import coding_challenge
 
-var topicDao:TopicDao!
-
 class Test: XCTestCase {
 
     override func setUp() {
@@ -24,16 +22,16 @@ class Test: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func testVoteCount() {
-        for _ in 1 ... 5 {
-            topicDao.upvote()
-        }
-        for _ in 1 ... 3 {
-            topicDao.downvote()
-        }
-        XCTAssertEqual(topicDao.getUpvotesCount(), 5, "upvote count is wrong")
-        XCTAssertEqual(topicDao.getDownvotesCount(), 3, "downvote count is wrong")
-        XCTAssertEqual(topicDao.getVoteCount(), 2, "Total vote count is wrong")
-    }
+//    func testVoteCount() {
+//        for _ in 1 ... 5 {
+//            topicDao.upvote()
+//        }
+//        for _ in 1 ... 3 {
+//            topicDao.downvote()
+//        }
+//        XCTAssertEqual(topicDao.getUpvotesCount(), 5, "upvote count is wrong")
+//        XCTAssertEqual(topicDao.getDownvotesCount(), 3, "downvote count is wrong")
+//        XCTAssertEqual(topicDao.getVoteCount(), 2, "Total vote count is wrong")
+//    }
 
 }

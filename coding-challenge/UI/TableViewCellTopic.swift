@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
 class TableViewCellTopic: UITableViewCell {
     
-    private var topicDao:TopicDao!
+    private var topicDao:NSManagedObject!
+    private var vote:Int!
     @IBOutlet weak var textTopic: UITextView!
     @IBOutlet weak var txtVote: UILabel!
     
@@ -28,19 +30,20 @@ class TableViewCellTopic: UITableViewCell {
     /// This function use to set TopicData object and set the label
     ///
     /// - Parameter topicObj: The TopicDao from AppData
-    func setTopicDao(_ topicObj: TopicDao) {
+    func setTopicDao(_ topicObj: NSManagedObject) {
         topicDao = topicObj
-        textTopic.text = topicDao.getTopic()
+        textTopic.text = topicDao.value(forKey: "topic") as? String
+        vote = topicDao.value(forKey: "vote") as? Int ?? 0
         updateVote()
     }
     
     @IBAction func upvote(_ sender: Any) {
-        topicDao.upvote()
+        vote += 1
         updateVote()
     }
     
     @IBAction func downvote(_ sender: Any) {
-        topicDao.downvote()
+        vote -= 1
         updateVote()
     }
     
@@ -52,11 +55,11 @@ class TableViewCellTopic: UITableViewCell {
             return
         }
         
-        let vote = obj.getVoteCount()
+        AppData.updateVote(id: obj.value(forKey: "id") as! String, vote: vote)
         if vote <= 0 {
             txtVote.text = "."
         } else {
-            txtVote.text = "\(vote)"
+            txtVote.text = "\(String(describing: vote!))"
         }
     }
 }
